@@ -12,17 +12,17 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-//mongoose.connect(process.env.MONGODB_VAR);
+mongoose.connect(process.env.MONGODB_VAR);
 
-const connectDB=async()=>{
-  try{
-    await mongoose.connect(process.env.MONGODB_VAR)
-    console.log("Connect to mongodb successful");
-  }
-  catch(error){
-    console.log("Connect failed"+error.message)
-  }
-}
+// const connectDB=async()=>{
+//   try{
+//     await mongoose.connect(process.env.MONGODB_VAR)
+//     console.log("Connect to mongodb successful");
+//   }
+//   catch(error){
+//     console.log("Connect failed"+error.message)
+//   }
+// }
 
 const TodoSchema=new mongoose.Schema({
   Title:String
@@ -118,4 +118,4 @@ app.get("/about", function(req, res){
 app.listen(process.env.PORT, function() {
   console.log(process.env.PORT);
 });
-module.exports=connectDB;
+// module.exports=connectDB;
