@@ -43,7 +43,7 @@ const input3=new Layout({
 var inputList=[input1,input2,input3];
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(__dirname+"/public"));
 
 //const items = ["Buy Food", "Cook Food", "Eat Food"];
 const workItems = [];
